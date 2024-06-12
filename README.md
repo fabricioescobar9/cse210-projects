@@ -1,5 +1,5 @@
 # cse210-ww-student-template
-Hi I'm Fabricio Escobar, and today I'm learning how to use the commands Git
+Hi I'm Fabricio Escobar, and today I'm learning how to use the Git commands.
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
