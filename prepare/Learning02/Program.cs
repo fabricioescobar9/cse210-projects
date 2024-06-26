@@ -20,7 +20,7 @@ class Program
         job2.Display(); 
 
         Resume  myResume = new Resume();
-        myResume._name = "Allison Rose";
+        myResume._name = "Mick Jagger";
 
         myResume._jobs.Add(job1);
         myResume._jobs.Add(job2);
