@@ -7,9 +7,13 @@ public class Entry
     public void Display()
     {
         DateTime theCurrentTime = DateTime.Now;
-        string _date = theCurrentTime.ToShortDateString();
+        _date = theCurrentTime.ToShortDateString();
 
-        Console.WriteLine($"Date: {_date} — Prompt: {_promptText}");
-        Console.WriteLine($"{_entryText}");
+        PromptGenerator question = new PromptGenerator();
+        _promptText = question.GetRandomPrompt();
+        Console.WriteLine(_promptText);
+
+        Console.Write("> ");
+        _entryText = Console.ReadLine();
     }
 }

@@ -1,5 +1,8 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Formats.Asn1;
+using System.Runtime.CompilerServices;
+using System.IO;
 
 class Program
 {
@@ -7,6 +10,8 @@ class Program
     {
         Console.WriteLine("Welcome to the Journal Program!");
         int numberChoice = 0;
+        Journal theJournal = new Journal();
+        Entry anEntry = new Entry();
         while (numberChoice != 5)
         {
             Console.WriteLine("Please select one of the following choices:");
@@ -19,34 +24,28 @@ class Program
             string userChoice = Console.ReadLine();
             numberChoice = int.Parse(userChoice);
 
-            PromptGenerator responseQuestion = new PromptGenerator();
-            responseQuestion._prompts.Add("Who was the most interesting person I interacted with today?");
-            responseQuestion._prompts.Add("What was the best part of my day?");
-            responseQuestion._prompts.Add("How did I see the hand of the Lord in my life today?");
-            responseQuestion._prompts.Add("What was the strongest emotion I felt today?");
-            responseQuestion._prompts.Add("If I had one thing I could do over today, what would it be?");
-
-            // responseQuestion.GetRandomPrompt();
-
             if (numberChoice == 1)
             {
-
+               theJournal.AddEntry(anEntry);
             }
 
             else if (numberChoice == 2)
             {
-            Entry showEntries = new Entry();
-            showEntries.Display();
+                theJournal.DisplayAll();
             }
 
             else if (numberChoice == 3)
-            {
-
+            {   
+                Console.WriteLine("What is the filename? ");
+                string loadFileName = Console.ReadLine();
+                theJournal.LoadFromFile(loadFileName);
             }
 
             else if (numberChoice == 4)
             {
-
+                Console.WriteLine("What is the filename? ");
+                string saveFileName = Console.ReadLine();
+                theJournal.SaveToFile(saveFileName);
             }
         }
     }
