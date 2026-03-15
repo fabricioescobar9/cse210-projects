@@ -46,3 +46,5 @@ class Program
         Console.WriteLine($"{name}, the square of your number is {square}");
     }
 }
+
+// I have fixed errors and the code is working good now.
